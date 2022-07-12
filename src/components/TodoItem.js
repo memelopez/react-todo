@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function TodoItem(props) {
-  const { todo } = props;
-  return <li>{todo.title}</li>;
+class TodoItem extends React.Component {
+  render() {
+    const { todo } = this.props;
+    return <li>{todo.title}</li>;
+  }
 }
 
 TodoItem.propTypes = {
