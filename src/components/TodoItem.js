@@ -23,6 +23,14 @@ class TodoItem extends React.Component {
 
   render() {
     const { todo } = this.props;
+
+    const completedStyle = {
+      fontStyle: 'italic',
+      color: '#595959',
+      opacity: 0.4,
+      textDecoration: 'line-through',
+    };
+
     return (
       <li className={styles.item}>
         <input
@@ -37,7 +45,9 @@ class TodoItem extends React.Component {
         >
           Delete
         </button>
-        {todo.title}
+        <span style={todo.completed ? completedStyle : null}>
+          {todo.title}
+        </span>
       </li>
     );
   }
